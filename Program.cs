@@ -2,6 +2,11 @@ using Parcial1_Ap1_JosePolanco.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var ConStr = builder.Configuration.GetConnectionString("ConStr");
+builder.Services.AddDbContext<Contexto>(options => options.UseSqlite("Data Source = Data\\Metas.db"));
+builder.Services.AddScoped<MetasService>();
+builder.Services.AddScoped<Contexto>();
+
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
