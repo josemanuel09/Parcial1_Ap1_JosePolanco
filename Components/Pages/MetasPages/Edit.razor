@@ -1,5 +1,5 @@
-﻿@page "/Create"
-@page "/Create/{metaId:int}"
+﻿@page "/Edit"
+@page "/Edit/{metaId:int}"
 @inject MetasService metasService
 @inject NavigationManager navigationManager
 @inject IJSRuntime jsRuntime
@@ -11,7 +11,7 @@
     <div class="container">
         <div class="card shadow-lg">
             <div class="card-header">
-                <h3>Crear Meta</h3>
+                <h3>Editar Meta</h3>
             </div>
             <div class="card-body">
                 <div class="row">
@@ -37,7 +37,7 @@
                     </div>
                 </div>
 
-                
+
 
                 <div class="row">
                     <div class="col-md-6">
@@ -65,7 +65,7 @@
             </div>
             <div class="card-footer d-flex justify-content-between">
                 <button type="submit" class="btn btn-primary">
-                    <span>Crear <i class="bi bi-file-earmark" /></span>
+                    <span>Editar <i class="bi bi-file-earmark" /></span>
                 </button>
                 <a href="/Detail" class="btn btn-secondary">
                     <span>Volver a la consulta <i class="bi bi-arrow-return-left"></i></span>
