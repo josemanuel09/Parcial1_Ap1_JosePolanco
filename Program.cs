@@ -1,4 +1,7 @@
+using Microsoft.EntityFrameworkCore;
 using Parcial1_Ap1_JosePolanco.Components;
+using Parcial1_Ap1_JosePolanco.DAL;
+using Parcial1_Ap1_JosePolanco.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
