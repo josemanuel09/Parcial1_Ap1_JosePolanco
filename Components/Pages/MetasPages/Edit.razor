@@ -67,7 +67,7 @@
                 <button type="submit" class="btn btn-primary">
                     <span>Editar <i class="bi bi-file-earmark" /></span>
                 </button>
-                <a href="/Detail" class="btn btn-secondary">
+                <a href="/Index" class="btn btn-secondary">
                     <span>Volver al detalle <i class="bi bi-arrow-return-left"></i></span>
                 </a>
             </div>
@@ -120,7 +120,7 @@
 
         await metasService.Guardar(Meta);
         Guardo = true;
-        navigationManager.NavigateTo("/Detail");
+        navigationManager.NavigateTo("/Index");
         Nuevo();
     }
     public void Nuevo()

@@ -26,7 +26,7 @@
                 <dd class="col-sm-9">@Meta.Result?.Monto</dd>
             </dl>
             <button type="button" class="btn btn-danger" @onclick="Eliminar">Eliminar</button>
-            <a href="/detail" class="btn btn-link">Volver al detalle</a>
+            <a href="/Index" class="btn btn-link">Volver al detalle</a>
 
         </div>
 
@@ -54,7 +54,7 @@ else
         if (meta != null)
         {
             var eliminado = metasService.Eliminar(meta);
-            navigationManager.NavigateTo("/Detail");
+            navigationManager.NavigateTo("/Index");
         }
 
     }

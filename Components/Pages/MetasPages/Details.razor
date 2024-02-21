@@ -1,0 +1,49 @@
+﻿@page "/Details"
+@page "/Details/{metaId:int}"
+@inject MetasService metasService
+@inject NavigationManager navigationManager
+@inject IJSRuntime jsRuntime
+@rendermode InteractiveServer
+
+<PageTitle>Detalle de meta</PageTitle>
+<div class="card shadow">
+    <div class="card-header ">
+        <h2 class="text-center">
+            Detalle de Meta
+        </h2>
+    </div>
+    <div class="card-body">
+        <p><strong>MetaId: </strong>@meta.MetaId</p>
+        <p><strong>Fecha: </strong>@meta.Fecha</p>
+        <p><strong>Descripcion: </strong>@meta.Descripcion</p>
+        <p><strong>Monto: </strong>@meta.Monto</p>
+    </div>
+    <div class="card-footer">
+        <div class="input-group">
+            <a href="/Index" class="btn btn-primary bi bi-house"> Volver</a>
+        </div>
+    </div>
+</div>
+
+
+@code {
+    [Parameter]
+    public int MetaId { get; set; }
+    public Metas meta { get; set; } = new Metas();
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (MetaId > 0)
+        {
+            meta.MetaId = MetaId;
+            await Buscar();
+        }
+    }
+
+    public async Task Buscar()
+    {
+        var Buscado =await metasService.Buscar(meta.MetaId);
+            if (Buscado != null)
+                meta = Buscado;
+    }
+}
