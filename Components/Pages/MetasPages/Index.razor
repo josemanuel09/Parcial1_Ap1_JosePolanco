@@ -98,7 +98,7 @@
 @code {
     [Parameter]
     public int MetaId { get; set; }
-    public Metas Aporte { get; set; } = new Metas();
+    public Metas Meta { get; set; } = new Metas();
     public DateTime? Desde { get; set; }
     public DateTime? Hasta { get; set; }
     public List<Metas> MetasList { get; set; } = new List<Metas>();
@@ -109,6 +109,9 @@
     protected override void OnInitialized()
     {
         Buscar();
+        Hasta = DateTime.Now.Date;
+
+        
     }
 
     public void Buscar()
